@@ -6,7 +6,7 @@ import { Country } from "@/types/country";
 import { GameContextI, GameDaily, State, initialDaily, initialState } from "@/types/game";
 import { FetchStatus } from "@/hooks/useFetchData";
 import useStoredState from "@/hooks/useStoredState";
-import { GenerateDictionary, getDailyAnswer } from "@/utils/countryUtils";
+import { useDictionary, getDailyAnswer } from "@/utils/countryUtils";
 import { hasExpired } from "@/utils/dateUtils";
 import { useCountries } from "@/hooks/useCountries";
 
@@ -15,7 +15,7 @@ export const GameContext = createContext<GameContextI>(initialState());
 export function GameProvider(props: { children: React.ReactNode }) {
   const [daily, setDaily] = useStoredState<GameDaily>("daily", initialDaily());
   const [data, requestStatus] = useCountries();
-  const dictionary = GenerateDictionary(data);
+  const dictionary = useDictionary(data);
   const answer = getDailyAnswer(dictionary);
 
   // Controls status based on requestStatus

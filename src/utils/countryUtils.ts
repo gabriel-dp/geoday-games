@@ -1,5 +1,5 @@
 import { CountryData, Country, CountryDictionary } from "@/types/country";
-// import useLanguage from "@/contexts/language/useLanguage";
+import useLanguage from "@/contexts/language/useLanguage";
 import { normalize } from "@/utils/stringUtils";
 import { getTodaySeed, mapIntegerInterval, randomSeeded } from "@/utils/randomUtils";
 
@@ -8,10 +8,9 @@ const LANGUAGE_MAP = {
   "pt-BR": "por",
 };
 
-export const GenerateDictionary = (allCountries: CountryData[]): CountryDictionary => {
-  //   const { i18n } = useLanguage();
-  //   const language = LANGUAGE_MAP[i18n.language as keyof typeof LANGUAGE_MAP];
-  const language = LANGUAGE_MAP["pt-BR"];
+export const useDictionary = (allCountries: CountryData[]): CountryDictionary => {
+  const { i18n } = useLanguage();
+  const language = LANGUAGE_MAP[i18n.language as keyof typeof LANGUAGE_MAP];
   const dictionary: CountryDictionary = {};
 
   allCountries
