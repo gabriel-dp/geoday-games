@@ -5,8 +5,9 @@ import styled from "styled-components";
 export const UserInteractContainer = styled.div`
   width: 100%;
   padding: 0.5rem max(1rem, calc(50% - (50rem / 2)));
-  border-top: 1px solid ${(props) => props.theme.primary}AA;
+  border-top: 1px solid ${(props) => props.theme.primary}22;
   position: relative;
+  box-shadow: 0 1rem 1rem 1.25rem #00000022;
 
   display: flex;
   flex-direction: row;

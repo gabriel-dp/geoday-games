@@ -42,6 +42,7 @@ export const ButtonContainer = styled.div`
   height: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
+  outline: 1px solid ${(props) => props.theme.primary}AA;
   background-color: ${(props) => props.theme.primary};
 
   * {

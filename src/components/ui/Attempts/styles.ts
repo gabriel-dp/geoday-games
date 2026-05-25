@@ -61,7 +61,7 @@ export const CountryName = styled.td`
   color: ${(props) => props.theme.primary};
   font-size: 0.875rem;
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0 1rem;
 
   &.forfeited {

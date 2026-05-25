@@ -22,14 +22,12 @@ export const BackgroundFilter = styled.div<{ $isOpen: string }>`
 `;
 
 export const PopupContainer = styled.div`
-  height: min(calc(100% - 2rem), 30rem);
   width: min(calc(100% - 2rem), 30rem);
+  max-height: min(calc(100% - 2rem), 30rem);
   border-radius: 0.5rem;
-  padding: 1.5rem;
-  padding-top: 2.5rem;
   background-color: ${(props) => props.theme.background};
   border: 1px solid ${(props) => props.theme.primary};
-  overflow-y: auto;
+  overflow: hidden;
   position: relative;
   text-align: center;
 
@@ -53,6 +51,14 @@ export const PopupContainer = styled.div`
   }
 `;
 
+export const PopupWrapper = styled.div`
+  max-height: 30rem;
+  overflow-y: auto;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+`;
+
 export const CloseButtonContainer = styled.div`
   height: 2.5rem;
   aspect-ratio: 1;
@@ -60,5 +66,5 @@ export const CloseButtonContainer = styled.div`
 
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 1.25rem;
 `;

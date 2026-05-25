@@ -17,11 +17,11 @@ export default function Help() {
       <h1>{t`popups.help`}</h1>
       <p>{t`help.mission`}</p>
       <p>{t`help.input`}</p>
-      <Image src={helpInput} alt="IMAGE-INPUT" />
+      <Image src={helpInput} alt="IMAGE-INPUT" width="350" />
       <p>{t`help.attempt`}</p>
-      <Image src={helpAttempt} alt="IMAGE-ATTEMPT" />
+      <Image src={helpAttempt} alt="IMAGE-ATTEMPT" width="350" />
       <p>{t`help.hints`}</p>
-      <Image src={helpHints} alt="IMAGE-MAP" />
+      <Image src={helpHints} alt="IMAGE-MAP" width="350" />
       <p>{t`help.enjoy`}</p>
       <hr />
       <p>

@@ -1,74 +1,74 @@
 {
-	"boolean": {
-		"true": "Yes",
-		"false": "No"
-	},
-	"placeholder": "Start with a random country",
-	"help": {
-		"mission": "Your mission is to guess the country of the day using the data provided by your attempts",
-		"input": "Enter any country in the input by typing its name",
-		"attempt": "Analyze the attempt, the colors identify how close you are to discovering the correct country",
-		"hints": "Consult the world map and the hints at any time",
-		"enjoy": "Have fun!",
-		"author": "Made by "
-	},
-	"border": "Border",
-	"continents": {
-		"africa": "Africa",
-		"americas": "America",
-		"antarctica": "Antarctica",
-		"asia": "Asia",
-		"europe": "Europe",
-		"oceania": "Oceania"
-	},
-	"categories": {
-		"continent": "Continent",
-		"area": "Area (km²)",
-		"population": "Population",
-		"distance": "Distance (km)"
-	},
-	"popups": {
-		"help": "Are you lost?",
-		"map": "Map",
-		"statistics": "Statistics",
-		"settings": "Settings",
-		"forfeit": "Forfeit",
-		"hints": "Hints"
-	},
-	"configs": {
-		"theme": {
-			"title": "Theme",
-			"description": "Change the appearence"
-		},
-		"language": {
-			"title": "Language",
-			"description": "Select the best language for you"
-		}
-	},
-	"hints": {
-		"languages": {
-			"name": "Language(s)",
-			"description": "Official language(s) spoken"
-		},
-		"coastline": {
-			"name": "Coastline",
-			"description": "Does the country have a coastline?"
-		},
-		"capitals": {
-			"name": "Capital(s)",
-			"description": "Name of the capital(s)"
-		},
-		"flag": {
-			"name": "Flag",
-			"description": "Official flag of the country"
-		}
-	},
-	"forfeit": {
-		"text": "Are you sure that you want to give up?",
-		"button": "Yes, give up"
-	},
-	"statistics": {
-		"usedMap": "Was the map consulted?",
-		"usedHints": "Were the hints used?"
-	}
+  "boolean": {
+    "true": "Yes",
+    "false": "No"
+  },
+  "placeholder": "Type the name...",
+  "help": {
+    "mission": "Your mission is to guess the country of the day using the data provided by your attempts",
+    "input": "Enter any country in the input by typing its name",
+    "attempt": "Analyze the attempt, the colors identify how close you are to discovering the correct country",
+    "hints": "Consult the world map and the hints at any time",
+    "enjoy": "Have fun!",
+    "author": "Made by "
+  },
+  "border": "Border",
+  "continents": {
+    "africa": "Africa",
+    "americas": "America",
+    "antarctica": "Antarctica",
+    "asia": "Asia",
+    "europe": "Europe",
+    "oceania": "Oceania"
+  },
+  "categories": {
+    "continent": "Continent",
+    "area": "Area (km²)",
+    "population": "Population",
+    "distance": "Distance (km)"
+  },
+  "popups": {
+    "help": "Are you lost?",
+    "map": "Map",
+    "statistics": "Statistics",
+    "settings": "Settings",
+    "forfeit": "Forfeit",
+    "hints": "Hints"
+  },
+  "configs": {
+    "theme": {
+      "title": "Theme",
+      "description": "Change the appearence"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Select the best language for you"
+    }
+  },
+  "hints": {
+    "languages": {
+      "name": "Language(s)",
+      "description": "Official language(s) spoken"
+    },
+    "coastline": {
+      "name": "Coastline",
+      "description": "Does the country have a coastline?"
+    },
+    "capitals": {
+      "name": "Capital(s)",
+      "description": "Name of the capital(s)"
+    },
+    "flag": {
+      "name": "Flag",
+      "description": "Official flag of the country"
+    }
+  },
+  "forfeit": {
+    "text": "Are you sure that you want to give up?",
+    "button": "Yes, give up"
+  },
+  "statistics": {
+    "usedMap": "Was the map consulted?",
+    "usedHints": "Were the hints used?"
+  }
 }

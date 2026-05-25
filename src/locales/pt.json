@@ -1,74 +1,74 @@
 {
-	"boolean": {
-		"true": "Sim",
-		"false": "Não"
-	},
-	"placeholder": "Comece com um país aleatório",
-	"help": {
-		"mission": "Sua missão é adivinhar o país do dia usando os dados das suas tentativas",
-		"input": "Insira qualquer país no campo de texto digitando o nome",
-		"attempt": "Analise a tentativa, as cores identificam o quão perto você está de descobrir o país correto",
-		"hints": "Consulte o mapa e as dicas a qualquer momento",
-		"enjoy": "Divirta-se!",
-		"author": "Desenvolvido por "
-	},
-	"border": "Fronteira",
-	"continents": {
-		"africa": "África",
-		"americas": "América",
-		"antarctica": "Antártida",
-		"asia": "Ásia",
-		"europe": "Europa",
-		"oceania": "Oceania"
-	},
-	"categories": {
-		"continent": "Continente",
-		"area": "Área (km²)",
-		"population": "População",
-		"distance": "Distância (km)"
-	},
-	"popups": {
-		"help": "Está perdido?",
-		"map": "Mapa",
-		"statistics": "Estatísticas",
-		"settings": "Configurações",
-		"forfeit": "Desistir",
-		"hints": "Dicas"
-	},
-	"configs": {
-		"theme": {
-			"title": "Tema",
-			"description": "Modifique a aparência"
-		},
-		"language": {
-			"title": "Idioma",
-			"description": "Selecione o melhor idioma para você"
-		}
-	},
-	"hints": {
-		"languages": {
-			"name": "Idioma(s)",
-			"description": "Idiomas falados oficiais"
-		},
-		"coastline": {
-			"name": "Litoral",
-			"description": "O país tem litoral?"
-		},
-		"capitals": {
-			"name": "Capital(is)",
-			"description": "Nome da(s) capital(is)"
-		},
-		"flag": {
-			"name": "Bandeira",
-			"description": "Bandeira oficial do país"
-		}
-	},
-	"forfeit": {
-		"text": "Tem certeza que quer desistir?",
-		"button": "Sim, desisto"
-	},
-	"statistics": {
-		"usedMap": "O mapa foi consultado?",
-		"usedHints": "As dicas foram usadas?"
-	}
+  "boolean": {
+    "true": "Sim",
+    "false": "Não"
+  },
+  "placeholder": "Escreva o nome...",
+  "help": {
+    "mission": "Sua missão é adivinhar o país do dia usando os dados das suas tentativas",
+    "input": "Insira qualquer país no campo de texto digitando o nome",
+    "attempt": "Analise a tentativa, as cores identificam o quão perto você está de descobrir o país correto",
+    "hints": "Consulte o mapa e as dicas a qualquer momento",
+    "enjoy": "Divirta-se!",
+    "author": "Desenvolvido por "
+  },
+  "border": "Fronteira",
+  "continents": {
+    "africa": "África",
+    "americas": "América",
+    "antarctica": "Antártida",
+    "asia": "Ásia",
+    "europe": "Europa",
+    "oceania": "Oceania"
+  },
+  "categories": {
+    "continent": "Continente",
+    "area": "Área (km²)",
+    "population": "População",
+    "distance": "Distância (km)"
+  },
+  "popups": {
+    "help": "Está perdido?",
+    "map": "Mapa",
+    "statistics": "Estatísticas",
+    "settings": "Configurações",
+    "forfeit": "Desistir",
+    "hints": "Dicas"
+  },
+  "configs": {
+    "theme": {
+      "title": "Tema",
+      "description": "Modifique a aparência"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Selecione o melhor idioma para você"
+    }
+  },
+  "hints": {
+    "languages": {
+      "name": "Idioma(s)",
+      "description": "Idiomas falados oficiais"
+    },
+    "coastline": {
+      "name": "Litoral",
+      "description": "O país tem litoral?"
+    },
+    "capitals": {
+      "name": "Capital(is)",
+      "description": "Nome da(s) capital(is)"
+    },
+    "flag": {
+      "name": "Bandeira",
+      "description": "Bandeira oficial do país"
+    }
+  },
+  "forfeit": {
+    "text": "Tem certeza que quer desistir?",
+    "button": "Sim, desisto"
+  },
+  "statistics": {
+    "usedMap": "O mapa foi consultado?",
+    "usedHints": "As dicas foram usadas?"
+  }
 }
