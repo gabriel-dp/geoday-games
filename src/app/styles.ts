@@ -56,11 +56,6 @@ export const TitleContainer = styled.div`
   gap: 0.5rem;
   text-align: center;
 
-  h1 {
-    font-size: 2.5rem;
-    color: ${(props) => props.theme.text};
-  }
-
   p {
     font-size: 1rem;
     color: ${(props) => props.theme.text};

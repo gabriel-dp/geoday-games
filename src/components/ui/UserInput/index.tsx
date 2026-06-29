@@ -12,6 +12,7 @@ import IconButton from "@/components/IconButton";
 import Input from "@/components/Input";
 
 import Forfeit from "./Forfeit";
+import Hints from "./Hints";
 import CountryList from "./ContryList";
 import { CountryListContainer, UserInteractContainer } from "./styles";
 
@@ -23,7 +24,7 @@ export default function UserInput() {
   } = useGame();
 
   const [openForfeitPopup, ForfeitPopup] = usePopup(<Forfeit />);
-  const [openHintsPopup, HintsPopup] = usePopup(<div></div>);
+  const [openHintsPopup, HintsPopup] = usePopup(<Hints />);
 
   const [search, setSearch, searchTimed] = useSearchTimeout(250);
   const match = matchCountriesSearch(searchTimed, dictionary, 10);

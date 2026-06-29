@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   MdOutlineFlag as FlagIcon,
   MdOutlineLocationOn as HintIcon,
@@ -7,6 +8,7 @@ import {
 } from "react-icons/md";
 
 import useLanguage from "@/contexts/language/useLanguage";
+import useTheme from "@/contexts/theme/useTheme";
 import usePopup from "@/hooks/usePopup";
 import IconButton from "@/components/IconButton";
 import Settings from "@/components/ui/Header/Settings";
@@ -15,6 +17,7 @@ import { ConfigsContainer, Footer, MainContainer, ModeCard, ModesContainer, Titl
 
 export default function Home() {
   const { t } = useLanguage();
+  const theme = useTheme();
   const [openSettingsPopup, SettingsPopup] = usePopup(<Settings />);
 
   return (
@@ -24,7 +27,14 @@ export default function Home() {
       </ConfigsContainer>
 
       <TitleContainer>
-        <h1>{t("home.title")}</h1>
+        <Image
+          src={`/${theme?.logo}`}
+          alt="GeodayGames logo"
+          width={260}
+          height={80}
+          style={{ objectFit: "contain" }}
+          priority
+        />
         <p>{t("home.subtitle")}</p>
       </TitleContainer>
 

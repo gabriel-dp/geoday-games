@@ -75,7 +75,23 @@
     "flag": {
       "name": "Bandeira",
       "description": "Bandeira oficial do país"
+    },
+    "subregion": {
+      "name": "Sub-região",
+      "description": "Sub-região geográfica"
+    },
+    "borders": {
+      "name": "Fronteiras",
+      "description": "Número de países fronteiriços"
+    },
+    "driving_side": {
+      "name": "Lado do trânsito",
+      "description": "Lado da estrada em que o trânsito circula"
     }
+  },
+  "driving_side": {
+    "left": "Esquerda",
+    "right": "Direita"
   },
   "forfeit": {
     "text": "Tem certeza que quer desistir?",

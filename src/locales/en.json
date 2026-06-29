@@ -75,7 +75,23 @@
     "flag": {
       "name": "Flag",
       "description": "Official flag of the country"
+    },
+    "subregion": {
+      "name": "Subregion",
+      "description": "Geographic subregion"
+    },
+    "borders": {
+      "name": "Borders",
+      "description": "Number of bordering countries"
+    },
+    "driving_side": {
+      "name": "Driving Side",
+      "description": "Side of the road traffic drives on"
     }
+  },
+  "driving_side": {
+    "left": "Left",
+    "right": "Right"
   },
   "forfeit": {
     "text": "Are you sure that you want to give up?",
