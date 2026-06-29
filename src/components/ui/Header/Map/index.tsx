@@ -2,6 +2,7 @@
 
 import L from "leaflet";
 import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 import useTheme from "@/contexts/theme/useTheme";
 

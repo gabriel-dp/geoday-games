@@ -5,17 +5,22 @@ import { useEffect, useState } from "react";
 import { CountryData } from "@/types/country";
 import { FetchStatus, useFetchData } from "@/hooks/useFetchData";
 
-const BASE_REST_COUNTRIES_URL = "https://restcountries.com/v3.1";
+const BASE_REST_COUNTRIES_URL = "https://api.restcountries.com/countries/v5";
 
-const ALL_COUNTRIES_URL = `${BASE_REST_COUNTRIES_URL}/all?fields=cca3,name,translations,region,latlng,borders,area,population,area,independent`;
+const ALL_COUNTRIES_URL = `${BASE_REST_COUNTRIES_URL}`;
 
 export function useCountries(): [CountryData[], FetchStatus] {
-  const { data, status } = useFetchData<CountryData[]>(ALL_COUNTRIES_URL);
+  const { data, status } = useFetchData<{ data: { objects: CountryData[] } }>(
+    ALL_COUNTRIES_URL,
+    { headers: { Authorization: "Bearer rc_live_f8c8c57d60ed494abe5a281f60088d62" } },
+    true,
+  );
   const [allCountries, setAllCountries] = useState<CountryData[]>([]);
 
   useEffect(() => {
+    console.log(data);
     if (data) {
-      const independentCountries = data.filter((country) => country.independent);
+      const independentCountries = data.data.objects.filter((country) => country.classification.dependency);
       setAllCountries(independentCountries);
     }
   }, [data]);

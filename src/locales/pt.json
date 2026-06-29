@@ -3,6 +3,20 @@
     "true": "Sim",
     "false": "Não"
   },
+  "home": {
+    "title": "Geoday Games",
+    "subtitle": "Escolha um modo de jogo e comece a adivinhar!"
+  },
+  "modes": {
+    "hints": {
+      "name": "Dicas",
+      "description": "Adivinhe o país do dia usando os dados das suas tentativas"
+    },
+    "flag": {
+      "name": "Bandeira",
+      "description": "Adivinhe o país do dia usando pedaços da bandeira"
+    }
+  },
   "placeholder": "Escreva o nome...",
   "help": {
     "mission": "Sua missão é adivinhar o país do dia usando os dados das suas tentativas",

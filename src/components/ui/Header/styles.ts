@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -14,7 +15,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   padding: 0.75rem 1rem;
   height: 100%;
   font-size: 0.625rem;

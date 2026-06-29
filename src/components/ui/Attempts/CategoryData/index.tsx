@@ -67,8 +67,8 @@ export const AreaCategory = (props: CategoryProps) => {
 
   return (
     <NumberCategory
-      attempt={props.country.data.area}
-      correct={dictionary[answer].data.area}
+      attempt={props.country.data.area.kilometers}
+      correct={dictionary[answer].data.area.kilometers}
       almostRange={[0.5, 0.75]}
     />
   );
@@ -96,7 +96,11 @@ export const DistanceCategory = (props: CategoryProps) => {
     data: { dictionary, answer },
   } = useGame();
 
-  const [attemptLatLng, correctLatLng] = [props.country.data.latlng, dictionary[answer].data.latlng];
+  const toLatLng = (coords: { lat: number; lng: number }): [number, number] => [coords.lat, coords.lng];
+  const [attemptLatLng, correctLatLng] = [
+    toLatLng(props.country.data.coordinates),
+    toLatLng(dictionary[answer].data.coordinates),
+  ];
 
   const distance = distanceCoordinates(attemptLatLng, correctLatLng);
   const degrees = calculateAngle(attemptLatLng, correctLatLng);

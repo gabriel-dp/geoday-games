@@ -3,6 +3,20 @@
     "true": "Yes",
     "false": "No"
   },
+  "home": {
+    "title": "Geoday Games",
+    "subtitle": "Choose a game mode and start guessing!"
+  },
+  "modes": {
+    "hints": {
+      "name": "Hints",
+      "description": "Guess the country of the day using data from your attempts"
+    },
+    "flag": {
+      "name": "Flag",
+      "description": "Guess the country of the day from pieces of its flag"
+    }
+  },
   "placeholder": "Type the name...",
   "help": {
     "mission": "Your mission is to guess the country of the day using the data provided by your attempts",

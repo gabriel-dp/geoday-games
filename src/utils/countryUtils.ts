@@ -14,14 +14,14 @@ export const useDictionary = (allCountries: CountryData[]): CountryDictionary =>
   const dictionary: CountryDictionary = {};
 
   allCountries
-    .sort((a, b) => a.name.common.localeCompare(b.name.common))
+    .sort((a, b) => a.names.common.localeCompare(b.names.common))
     .forEach((country) => {
-      dictionary[country.cca3] = {
-        id: country.cca3,
+      dictionary[country.codes.alpha_3] = {
+        id: country.codes.alpha_3,
         name: {
-          exact: country.translations[language]?.common ?? country.name.common,
+          exact: country.names.translations[language]?.common ?? country.names.common,
           alias: [
-            /*country.name.official, ...country.altSpellings*/
+            /*country.names.official, ...country.names.alternates*/
           ],
         },
         data: country,

@@ -21,9 +21,9 @@ export const BackgroundFilter = styled.div<{ $isOpen: string }>`
   align-items: center;
 `;
 
-export const PopupContainer = styled.div`
+export const PopupContainer = styled.div<{ $isMin: string }>`
   width: min(calc(100% - 2rem), 30rem);
-  max-height: min(calc(100% - 2rem), 30rem);
+  ${(props) => props.$isMin === "false" && `max`}height: min(calc(100% - 2rem), 30rem);
   border-radius: 0.5rem;
   background-color: ${(props) => props.theme.background};
   border: 1px solid ${(props) => props.theme.primary};

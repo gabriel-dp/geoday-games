@@ -1,46 +1,76 @@
 export interface CountryData {
-	// id
-	cca3: string;
+  // names
+  names: {
+    common: string;
+    alternates: string[];
+    native: Record<string, { common: string; official: string }>;
+    translations: Record<string, { common: string; official: string }>;
+  };
+  capitals: { name: string }[];
 
-	// filters
-	independent: boolean;
+  // codes
+  codes: {
+    alpha_2: string;
+    alpha_3: string;
+  };
 
-	// names
-	name: { common: string; official: string };
-	altSpellings: string[];
-	translations: { [key: string]: { official: string; common: string } };
+  // flag
+  flag: {
+    emoji: string;
+    unicode: string;
+    html_entity: string;
+    url_png: string;
+    url_svg: string;
+  };
 
-	// locals
-	region: string;
-	latlng: [number, number];
-	borders: string[]; // cca3 codes
+  // geography & people
+  region: string;
+  subregion: string;
+  continents: string[];
+  landlocked: boolean;
+  borders: string[]; // alpha_3 codes
+  area: { kilometers: number };
+  coordinates: { lat: number; lng: number };
+  population: number;
+  languages: {
+    iso_639_1: string;
+    iso_639_2: string;
+    iso_639_3: string;
+    bcp_47: string;
+    name: string;
+    native: string;
+  }[];
 
-	// numerics
-	area: number;
-	population: number;
+  // currencies & calling codes
+  calling_codes: string[];
 
-	// flags
-	flag: string; // emoji
-	flags: { png: string; svg: string; alt: string }; // links + alt
+  // cars
+  cars: {
+    driving_side: "left" | "right";
+  };
 
-	// maps
-	maps: { googleMaps: string; openStreetMaps: string }; // map links
+  // classification & memberships
+  classification: {
+    dependency: boolean;
+  };
+  parent: {
+    alpha_2: string;
+    alpha_3: string;
+  };
 
-	// hints
-	languages: { [abbreviation: string]: string };
-	capital: string[];
-	landlocked: boolean;
+  // government
+  government_type: string;
 }
 
 export type CountryId = string;
 
 export interface Country {
-	id: CountryId;
-	name: {
-		exact: string;
-		alias: string[];
-	};
-	data: CountryData;
+  id: CountryId;
+  name: {
+    exact: string;
+    alias: string[];
+  };
+  data: CountryData;
 }
 
 export type CountryDictionary = Record<CountryId, Country>;
