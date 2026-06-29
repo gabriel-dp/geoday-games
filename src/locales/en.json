@@ -84,5 +84,9 @@
   "statistics": {
     "usedMap": "Was the map consulted?",
     "usedHints": "Were the hints used?"
+  },
+  "congratulations": {
+    "title": "Congratulations!",
+    "description": "You found the country of the day"
   }
 }

@@ -18,9 +18,9 @@ export function useCountries(): [CountryData[], FetchStatus] {
   const [allCountries, setAllCountries] = useState<CountryData[]>([]);
 
   useEffect(() => {
-    console.log(data);
     if (data) {
-      const independentCountries = data.data.objects.filter((country) => country.classification.dependency);
+      const independentCountries = data.data.objects.filter((country) => country.classification.un_member);
+      console.log(independentCountries);
       setAllCountries(independentCountries);
     }
   }, [data]);

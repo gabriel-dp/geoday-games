@@ -1,6 +1,6 @@
 "use client";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const TableContainer = styled.div`
   width: 100%;
@@ -97,4 +97,62 @@ export const AttemptCategory = styled.td`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(1rem);
+  }
+  60% {
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+`;
+
+const bounce = keyframes`
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-0.75rem) rotate(-8deg);
+  }
+  60% {
+    transform: translateY(-0.35rem) rotate(8deg);
+  }
+`;
+
+export const Congratulations = styled.td`
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+
+  animation: ${popIn} 0.6s ease-out both;
+
+  .flag {
+    user-select: none;
+    font-size: 4rem;
+    line-height: 1;
+    animation: ${bounce} 1.5s ease-in-out infinite;
+  }
+
+  h2 {
+    color: ${(props) => props.theme.primary};
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    color: ${(props) => props.theme.primary};
+    font-size: 0.875rem;
+  }
 `;

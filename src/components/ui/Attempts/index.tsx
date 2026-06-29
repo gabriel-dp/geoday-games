@@ -7,7 +7,16 @@ import useGame from "@/contexts/game/useGame";
 import useLanguage from "@/contexts/language/useLanguage";
 
 import { AreaCategory, ContinentCategory, DistanceCategory, PopulationCategory } from "./CategoryData";
-import { Attempt, AttemptCategory, Categories, Category, CountryName, TableAttempts, TableContainer } from "./styles";
+import {
+  Attempt,
+  AttemptCategory,
+  Categories,
+  Category,
+  Congratulations,
+  CountryName,
+  TableAttempts,
+  TableContainer,
+} from "./styles";
 
 export default function Attempts() {
   const { t } = useLanguage();
@@ -15,6 +24,8 @@ export default function Attempts() {
     data: { dictionary, answer },
     daily: { attempts, hasFofeited, state },
   } = useGame();
+
+  const hasWon = state == "finished" && !hasFofeited;
 
   const CATEGORIES = [
     { name: t`categories.continent`, icon: MdOutlinePublic, component: ContinentCategory },
@@ -62,6 +73,17 @@ export default function Attempts() {
               </Attempt>
             </Fragment>
           ))}
+          {hasWon && (
+            <tr>
+              <Congratulations>
+                <span className="flag">{dictionary[answer].data.flag.emoji}</span>
+                <h2>{t`congratulations.title`}</h2>
+                <p>
+                  {t`congratulations.description`}: {dictionary[answer].name.exact}
+                </p>
+              </Congratulations>
+            </tr>
+          )}
           {state == "finished" && hasFofeited && (
             <>
               <tr>

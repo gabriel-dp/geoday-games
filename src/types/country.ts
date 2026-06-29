@@ -51,7 +51,7 @@ export interface CountryData {
 
   // classification & memberships
   classification: {
-    dependency: boolean;
+    un_member: boolean;
   };
   parent: {
     alpha_2: string;

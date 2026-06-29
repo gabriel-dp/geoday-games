@@ -84,5 +84,9 @@
   "statistics": {
     "usedMap": "O mapa foi consultado?",
     "usedHints": "As dicas foram usadas?"
+  },
+  "congratulations": {
+    "title": "Parabéns!",
+    "description": "Você descobriu o país do dia"
   }
 }
