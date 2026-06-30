@@ -23,8 +23,6 @@ services:
     restart: always
     ports:
       - "3333:3000"
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5432/myapp
     depends_on:
       - db
     volumes:
