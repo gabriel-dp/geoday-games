@@ -25,6 +25,8 @@ services:
       - "3333:3000"
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/geoday
     volumes:
       - .:/app
       - /app/node_modules

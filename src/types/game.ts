@@ -2,6 +2,8 @@ import { Country, CountryDictionary, CountryId } from "@/types/country";
 import { FetchStatus } from "@/hooks/useFetchData";
 import { generateExpirationTime } from "@/utils/dateUtils";
 
+export type GameMode = "hints" | "flag";
+
 export enum State {
   IDLE = "idle",
   LOADING = "loading",
@@ -16,6 +18,7 @@ export interface GameDaily {
   usedMap: boolean;
   usedHints: boolean;
   hasFofeited: boolean;
+  globalSynced: boolean;
   expirationTime: Date;
 }
 
@@ -23,6 +26,7 @@ export interface GameData {
   status: FetchStatus;
   dictionary: CountryDictionary;
   answer: CountryId;
+  mode: GameMode;
 }
 
 export interface GameFunctions {
@@ -44,6 +48,7 @@ export const initialDaily = (): GameDaily => ({
   usedHints: false,
   usedMap: false,
   hasFofeited: false,
+  globalSynced: false,
   expirationTime: generateExpirationTime(),
 });
 
@@ -53,6 +58,7 @@ export const initialState = (): GameContextI => ({
     status: FetchStatus.IDLE,
     dictionary: {},
     answer: "",
+    mode: "hints",
   },
   functions: {
     registerAttempt: () => {},

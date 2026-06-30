@@ -109,7 +109,12 @@
     "distribution": "Guess Distribution",
     "syncNow": "Sync now",
     "pendingSync": "{{count}} result(s) not synced",
-    "allSynced": "All results synced"
+    "allSynced": "All results synced",
+    "globalTitle": "Today's Community",
+    "globalPlayers": "Players today",
+    "globalAvg": "Average attempts",
+    "tabPersonal": "My Stats",
+    "tabCommunity": "Community"
   },
   "auth": {
     "signIn": "Sign in with Google",

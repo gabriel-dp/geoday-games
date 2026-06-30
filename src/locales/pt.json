@@ -109,7 +109,12 @@
     "distribution": "Distribuição de tentativas",
     "syncNow": "Sincronizar",
     "pendingSync": "{{count}} resultado(s) não sincronizado(s)",
-    "allSynced": "Tudo sincronizado"
+    "allSynced": "Tudo sincronizado",
+    "globalTitle": "Comunidade Hoje",
+    "globalPlayers": "Jogadores hoje",
+    "globalAvg": "Média de tentativas",
+    "tabPersonal": "Minhas Estatísticas",
+    "tabCommunity": "Comunidade"
   },
   "auth": {
     "signIn": "Entrar com Google",

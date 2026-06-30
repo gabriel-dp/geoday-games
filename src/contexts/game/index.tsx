@@ -3,17 +3,15 @@
 import { createContext, useEffect, useState } from "react";
 
 import { Country } from "@/types/country";
-import { GameContextI, GameDaily, State, initialDaily, initialState } from "@/types/game";
+import { GameContextI, GameDaily, GameMode, State, initialDaily, initialState } from "@/types/game";
 import { FetchStatus } from "@/hooks/useFetchData";
 import useStoredState from "@/hooks/useStoredState";
 import { useDictionary, getDailyAnswer } from "@/utils/countryUtils";
-import { hasExpired } from "@/utils/dateUtils";
+import { hasExpired, getTodayString } from "@/utils/dateUtils";
 import { useCountries } from "@/hooks/useCountries";
 import useStats from "@/contexts/stats/useStats";
 
 export const GameContext = createContext<GameContextI>(initialState());
-
-export type GameMode = "hints" | "flag";
 
 const STORAGE_KEYS: Record<GameMode, string> = {
   hints: "hintsDaily",
@@ -79,6 +77,25 @@ export function GameProvider(props: { children: React.ReactNode; mode: GameMode 
     }
   }, [daily.state]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Submit result to global stats anonymously when game ends
+  useEffect(() => {
+    if (daily.state !== State.FINISHED || daily.globalSynced) return;
+    fetch("/api/global-stats", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mode: props.mode,
+        date: getTodayString(),
+        attempts: daily.attempts.length,
+        won: !daily.hasFofeited,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) setDaily((prev) => ({ ...prev, globalSynced: true }));
+      })
+      .catch(() => {});
+  }, [daily.state, daily.globalSynced, daily.attempts.length, daily.hasFofeited, props.mode, setDaily]);
+
   const registerAttempt = (country: Country): void => {
     if (daily.attempts.every((attempt) => country.id != attempt)) {
       setDaily((prev) => ({ ...prev, attempts: [...prev.attempts, country.id] }));
@@ -103,6 +120,7 @@ export function GameProvider(props: { children: React.ReactNode; mode: GameMode 
       status,
       dictionary,
       answer,
+      mode: props.mode,
     },
     functions: {
       registerAttempt,

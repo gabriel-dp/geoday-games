@@ -4,7 +4,7 @@ import loadingGIF from "@/assets/loading.gif";
 
 export default function Loading() {
   return (
-    <div>
+    <div style={{ margin: "auto" }}>
       <Image src={loadingGIF} alt="loading" loading="eager" />
     </div>
   );

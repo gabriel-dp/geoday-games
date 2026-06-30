@@ -17,6 +17,33 @@ export const StatisticsContainer = styled.div`
   }
 `;
 
+export const TabBar = styled.div`
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid ${({ theme }) => theme.neutral}44;
+`;
+
+export const TabButton = styled.button<{ $active: boolean }>`
+  flex: 1;
+  padding: 0.45rem 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  background: ${({ theme, $active }) => ($active ? theme.primary : "transparent")};
+  color: ${({ theme, $active }) => ($active ? theme.primaryText : theme.primary)};
+  border: none;
+
+  & + & {
+    border-left: 1px solid ${({ theme }) => theme.neutral}44;
+  }
+`;
+
 export const StatsGrid = styled.div`
   display: flex;
   justify-content: space-around;
@@ -117,6 +144,24 @@ export const DistributionBar = styled.div<{ $width: number }>`
   color: ${({ theme }) => theme.primaryText};
   transition: width 0.3s ease;
   min-width: fit-content;
+`;
+
+export const GlobalSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-top: 1px solid ${({ theme }) => theme.neutral}33;
+
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+  }
 `;
 
 export const AuthSection = styled.div`
