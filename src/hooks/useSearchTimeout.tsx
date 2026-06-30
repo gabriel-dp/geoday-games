@@ -7,7 +7,7 @@ export default function useSearchTimeout(
 ): [string, React.Dispatch<React.SetStateAction<string>>, string] {
   const [search, setSearch] = useState("");
   const [searchTimed, setSearchTimed] = useState("");
-  const [timer, setTimer] = useState<number | null>(null);
+  const [timer, setTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   // Triggers when the search changes and updates the value after the timeout ends
   const handleChangeSearch = useCallback(() => {
