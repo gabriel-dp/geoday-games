@@ -9,6 +9,7 @@ import useStoredState from "@/hooks/useStoredState";
 import { useDictionary, getDailyAnswer } from "@/utils/countryUtils";
 import { hasExpired } from "@/utils/dateUtils";
 import { useCountries } from "@/hooks/useCountries";
+import useStats from "@/contexts/stats/useStats";
 
 export const GameContext = createContext<GameContextI>(initialState());
 
@@ -17,6 +18,7 @@ export function GameProvider(props: { children: React.ReactNode }) {
   const [data, requestStatus] = useCountries();
   const dictionary = useDictionary(data);
   const answer = getDailyAnswer(dictionary);
+  const { recordResult } = useStats();
 
   // Controls status based on requestStatus
   const [status, setStatus] = useState<FetchStatus>(FetchStatus.IDLE);
@@ -56,6 +58,19 @@ export function GameProvider(props: { children: React.ReactNode }) {
       setDaily((prev) => ({ ...prev, state: State.FINISHED }));
     }
   }, [daily.attempts, answer, setDaily]);
+
+  // Record result when game transitions to finished
+  useEffect(() => {
+    if (daily.state === State.FINISHED) {
+      recordResult({
+        won: !daily.hasFofeited,
+        attempts: daily.attempts.length,
+        usedHints: daily.usedHints,
+        usedMap: daily.usedMap,
+        forfeited: daily.hasFofeited,
+      });
+    }
+  }, [daily.state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const registerAttempt = (country: Country): void => {
     if (daily.attempts.every((attempt) => country.id != attempt)) {

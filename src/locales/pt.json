@@ -98,8 +98,24 @@
     "button": "Sim, desisto"
   },
   "statistics": {
-    "usedMap": "O mapa foi consultado?",
-    "usedHints": "As dicas foram usadas?"
+    "today": "Jogo de hoje",
+    "usedMap": "Mapa usado",
+    "usedHints": "Dicas usadas",
+    "played": "Jogos",
+    "won": "Vitórias",
+    "winRate": "Vitórias %",
+    "currentStreak": "Sequência",
+    "bestStreak": "Melhor",
+    "distribution": "Distribuição de tentativas",
+    "syncNow": "Sincronizar",
+    "pendingSync": "{{count}} resultado(s) não sincronizado(s)",
+    "allSynced": "Tudo sincronizado"
+  },
+  "auth": {
+    "signIn": "Entrar com Google",
+    "signOut": "Sair",
+    "loggedInAs": "Conectado como",
+    "cloudSync": "Nuvem"
   },
   "congratulations": {
     "title": "Parabéns!",

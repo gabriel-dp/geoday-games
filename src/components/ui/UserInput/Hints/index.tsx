@@ -29,7 +29,7 @@ export default function Hints() {
       <h1>{t`popups.hints`}</h1>
       <Hint name={t`hints.languages.name`} description={t`hints.languages.description`}>
         {languages.map((lang) => (
-          <p key={lang.iso_639_1}>{lang.name}</p>
+          <p key={lang.name}>{lang.name}</p>
         ))}
       </Hint>
       <Hint name={t`hints.coastline.name`} description={t`hints.coastline.description`}>

@@ -98,8 +98,24 @@
     "button": "Yes, give up"
   },
   "statistics": {
-    "usedMap": "Was the map consulted?",
-    "usedHints": "Were the hints used?"
+    "today": "Today's game",
+    "usedMap": "Map used",
+    "usedHints": "Hints used",
+    "played": "Played",
+    "won": "Won",
+    "winRate": "Win %",
+    "currentStreak": "Streak",
+    "bestStreak": "Best",
+    "distribution": "Guess Distribution",
+    "syncNow": "Sync now",
+    "pendingSync": "{{count}} result(s) not synced",
+    "allSynced": "All results synced"
+  },
+  "auth": {
+    "signIn": "Sign in with Google",
+    "signOut": "Sign out",
+    "loggedInAs": "Signed in as",
+    "cloudSync": "Cloud Sync"
   },
   "congratulations": {
     "title": "Congratulations!",
