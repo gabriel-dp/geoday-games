@@ -13,11 +13,18 @@ import useStats from "@/contexts/stats/useStats";
 
 export const GameContext = createContext<GameContextI>(initialState());
 
-export function GameProvider(props: { children: React.ReactNode }) {
-  const [daily, setDaily] = useStoredState<GameDaily>("daily", initialDaily());
+export type GameMode = "hints" | "flag";
+
+const STORAGE_KEYS: Record<GameMode, string> = {
+  hints: "hintsDaily",
+  flag: "flagDaily",
+};
+
+export function GameProvider(props: { children: React.ReactNode; mode: GameMode }) {
+  const [daily, setDaily] = useStoredState<GameDaily>(STORAGE_KEYS[props.mode], initialDaily());
   const [data, requestStatus] = useCountries();
   const dictionary = useDictionary(data);
-  const answer = getDailyAnswer(dictionary);
+  const answer = getDailyAnswer(dictionary, props.mode);
   const { recordResult } = useStats();
 
   // Controls status based on requestStatus

@@ -120,5 +120,9 @@
   "congratulations": {
     "title": "Congratulations!",
     "description": "You found the country of the day"
+  },
+  "flag_mode": {
+    "attempts_used": "attempts used",
+    "answer_reveal": "The country of the day was"
   }
 }

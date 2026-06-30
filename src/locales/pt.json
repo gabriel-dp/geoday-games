@@ -120,5 +120,9 @@
   "congratulations": {
     "title": "Parabéns!",
     "description": "Você descobriu o país do dia"
+  },
+  "flag_mode": {
+    "attempts_used": "tentativas usadas",
+    "answer_reveal": "O país do dia era"
   }
 }

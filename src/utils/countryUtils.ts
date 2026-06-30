@@ -60,8 +60,8 @@ export const matchCountriesSearch = (search: string, dictionary: CountryDictiona
   return match;
 };
 
-export const getDailyAnswer = (dictionary: CountryDictionary): string => {
+export const getDailyAnswer = (dictionary: CountryDictionary, salt: string = ""): string => {
   const ids = Object.keys(dictionary);
   if (ids.length == 0) return null!;
-  return dictionary[ids[mapIntegerInterval(randomSeeded(getTodaySeed()), ids.length)]].id;
+  return dictionary[ids[mapIntegerInterval(randomSeeded(getTodaySeed() + salt), ids.length)]].id;
 };
