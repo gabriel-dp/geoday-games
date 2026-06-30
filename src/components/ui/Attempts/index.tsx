@@ -34,13 +34,13 @@ export default function Attempts() {
     { name: t`categories.distance`, icon: MdOutlineExplore, component: DistanceCategory },
   ];
 
-  // Scrolls to the bottom every time that a new attempt is registered
+  // Scrolls to the bottom every time that a new attempt is registered or the game ends
   const tableRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    if (attempts.length > 0) {
+    if (attempts.length > 0 || state === "finished") {
       tableRef.current?.scrollTo({ top: tableRef.current?.scrollHeight, behavior: "smooth" });
     }
-  }, [attempts, hasFofeited]);
+  }, [attempts, hasFofeited, state]);
 
   return (
     <TableContainer ref={tableRef}>
